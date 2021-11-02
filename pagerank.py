@@ -89,7 +89,7 @@ def transition_model(corpus, page, damping_factor):
     return(salida)
 
 
-    # raise NotImplementedError
+    raise NotImplementedError
 
 
 def sample_pagerank(corpus, damping_factor, n):
@@ -123,25 +123,15 @@ def sample_pagerank(corpus, damping_factor, n):
             # peso para elegiblesen lista de elegibles de salida de transition.model() para la muestra actual
             weights = [prox_muestra_prob[key] for key in choices]
 
-            """""
-             elije una muetra eligiendo al azar un elegible desde los elegibles
-             con una probabilidad de distribucion definida, la selección al azar
-             retorna una lista de valores, ya sea tomando el valor por uso del .pop(),
-             o por el uso de index[0]
-             """
             sample = random.choices(choices, weights).pop() 
             sample_PR[sample] += 1
 
-    """""
-        despues que el muestreo ha terminado, dividir los valores almacenados por
-        el numero de iteraciones; para obtener el porcentaje
-    """
 
     sample_PR = {key: round(value/n,4) for key, value in sample_PR.items()}
 
     return sample_PR
 
-    #raise NotImplementedError
+    raise NotImplementedError
 
 
 def iterate_pagerank(corpus, damping_factor):
@@ -191,7 +181,7 @@ def iterate_pagerank(corpus, damping_factor):
         salida = new_salida
     return salida   
     
-    #raise NotImplementedError
+    raise NotImplementedError
 
 
 if __name__ == "__main__":
